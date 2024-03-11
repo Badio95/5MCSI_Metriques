@@ -21,15 +21,15 @@
     });
     // Configurer les options du graphique en ligne
     var options = {
-      title: 'Évolution des températures de la ville de Tawarano',
+      title: 'Évolution des températures de Paris pour les 16 prochains jours',
       curveType: 'function',
       legend: { position: 'bottom' }
     };
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(dataTable, options);
   }
-  // Récupération de données depuis notre API /tawarano/
-  fetch('/tawarano/')
+  // Récupération de données depuis notre API /paris/
+  fetch('/paris/')
     .then(response => response.json())
     .then(data => {
       drawChart(data);
